@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 
 
 if __name__ == '__main__':
-    df_hearth = pd.read_csv('./data/heart.csv')
+    df_hearth = pd.read_csv('../data/heart.csv')
     df_features = df_hearth.drop(['target'], 'columns')
     df_target = df_hearth['target']
 
@@ -33,10 +33,10 @@ if __name__ == '__main__':
     df_train = pca.transform(x_train)
     df_test = pca.transform(x_test)
     logistic.fit(df_train, y_train)
-    print('Score PCA: ', logistic.score(df_test, y_test)) # 0.78
+    print('Score PCA: ', logistic.score(df_test, y_test))  # 0.78
 
     logistic2 = LogisticRegression()
     df_train = ipca.transform(x_train)
     df_test = ipca.transform(x_test)
     logistic2.fit(df_train, y_train)
-    print('Score IPCA: ', logistic2.score(df_test, y_test)) # 0.80
+    print('Score IPCA: ', logistic2.score(df_test, y_test))  # 0.80

@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 
 
 if __name__ == '__main__':
-    df_hearth = pd.read_csv('./data/heart.csv')
+    df_hearth = pd.read_csv('../data/heart.csv')
     df_features = df_hearth.drop(['target'], 'columns')
     df_target = df_hearth['target']
 
@@ -26,4 +26,4 @@ if __name__ == '__main__':
     df_test = kpca.transform(x_test)
     logistic = LogisticRegression()
     logistic.fit(df_train, y_train)
-    print('Score KPCA:', logistic.score(df_test, y_test)) # 0.79
+    print('Score KPCA:', logistic.score(df_test, y_test))  # 0.79
