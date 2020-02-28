@@ -19,7 +19,7 @@ def main():
     knn_pred = knn_class.predict(x_test)
     print('KNN accuracy:', accuracy_score(y_test, knn_pred))
 
-    bag_class = BaggingClassifier(base_estimator=KNeighborsClassifier(), n_estimators=50)
+    bag_class = BaggingClassifier(base_estimator=KNeighborsClassifier(), n_estimators=6)
     bag_class.fit(x_train, y_train)
     bag_pred = bag_class.predict(x_test)
     print('Bagging accuracy:', accuracy_score(y_test, bag_pred))
