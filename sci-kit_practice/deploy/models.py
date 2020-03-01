@@ -36,6 +36,7 @@ class Model:
             grid_reg = GridSearchCV(reg, self.params[name], cv=5)
             grid_reg.fit(x, y.values.ravel())
             score = np.abs(grid_reg.best_score_)
+
             if score < best_score:
                 best_score = score
                 best_model = grid_reg.best_estimator_
